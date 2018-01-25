@@ -1,0 +1,17 @@
+D:\Asp.Net Core\eCafe\eCafeForFoodie\eCafe.Data\obj\Debug\netcoreapp2.0\eCafe.Infrastructure.csprojResolveAssemblyReference.cache
+D:\Asp.Net Core\eCafe\eCafeForFoodie\eCafe.Data\obj\Debug\netcoreapp2.0\eCafe.Infrastructure.csproj.CoreCompileInputs.cache
+D:\Asp.Net Core\eCafe\eCafeForFoodie\eCafe.Data\obj\Debug\netcoreapp2.0\eCafe.Infrastructure.AssemblyInfoInputs.cache
+D:\Asp.Net Core\eCafe\eCafeForFoodie\eCafe.Data\obj\Debug\netcoreapp2.0\eCafe.Infrastructure.AssemblyInfo.cs
+D:\Asp.Net Core\eCafe\eCafeForFoodie\eCafe.Data\bin\Debug\netcoreapp2.0\eCafe.Infrastructure.deps.json
+D:\Asp.Net Core\eCafe\eCafeForFoodie\eCafe.Data\bin\Debug\netcoreapp2.0\eCafe.Infrastructure.dll
+D:\Asp.Net Core\eCafe\eCafeForFoodie\eCafe.Data\bin\Debug\netcoreapp2.0\eCafe.Infrastructure.pdb
+D:\Asp.Net Core\eCafe\eCafeForFoodie\eCafe.Data\bin\Debug\netcoreapp2.0\eCafe.Core.dll
+D:\Asp.Net Core\eCafe\eCafeForFoodie\eCafe.Data\bin\Debug\netcoreapp2.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\Asp.Net Core\eCafe\eCafeForFoodie\eCafe.Data\bin\Debug\netcoreapp2.0\Microsoft.AspNetCore.Mvc.Abstractions.dll
+D:\Asp.Net Core\eCafe\eCafeForFoodie\eCafe.Data\bin\Debug\netcoreapp2.0\System.Data.SqlClient.dll
+D:\Asp.Net Core\eCafe\eCafeForFoodie\eCafe.Data\bin\Debug\netcoreapp2.0\eCafe.Core.pdb
+D:\Asp.Net Core\eCafe\eCafeForFoodie\eCafe.Data\bin\Debug\netcoreapp2.0\Microsoft.AspNetCore.JsonPatch.xml
+D:\Asp.Net Core\eCafe\eCafeForFoodie\eCafe.Data\bin\Debug\netcoreapp2.0\Microsoft.AspNetCore.Mvc.Abstractions.xml
+D:\Asp.Net Core\eCafe\eCafeForFoodie\eCafe.Data\bin\Debug\netcoreapp2.0\System.Data.SqlClient.xml
+D:\Asp.Net Core\eCafe\eCafeForFoodie\eCafe.Data\obj\Debug\netcoreapp2.0\eCafe.Infrastructure.dll
+D:\Asp.Net Core\eCafe\eCafeForFoodie\eCafe.Data\obj\Debug\netcoreapp2.0\eCafe.Infrastructure.pdb

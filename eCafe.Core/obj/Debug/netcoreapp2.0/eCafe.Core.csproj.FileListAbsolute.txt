@@ -1,0 +1,9 @@
+D:\Asp.Net Core\eCafe\eCafeForFoodie\eCafe.Core\bin\Debug\netcoreapp2.0\eCafe.Core.deps.json
+D:\Asp.Net Core\eCafe\eCafeForFoodie\eCafe.Core\bin\Debug\netcoreapp2.0\eCafe.Core.dll
+D:\Asp.Net Core\eCafe\eCafeForFoodie\eCafe.Core\bin\Debug\netcoreapp2.0\eCafe.Core.pdb
+D:\Asp.Net Core\eCafe\eCafeForFoodie\eCafe.Core\obj\Debug\netcoreapp2.0\eCafe.Core.csproj.CoreCompileInputs.cache
+D:\Asp.Net Core\eCafe\eCafeForFoodie\eCafe.Core\obj\Debug\netcoreapp2.0\eCafe.Core.AssemblyInfoInputs.cache
+D:\Asp.Net Core\eCafe\eCafeForFoodie\eCafe.Core\obj\Debug\netcoreapp2.0\eCafe.Core.AssemblyInfo.cs
+D:\Asp.Net Core\eCafe\eCafeForFoodie\eCafe.Core\obj\Debug\netcoreapp2.0\eCafe.Core.dll
+D:\Asp.Net Core\eCafe\eCafeForFoodie\eCafe.Core\obj\Debug\netcoreapp2.0\eCafe.Core.pdb
+D:\Asp.Net Core\eCafe\eCafeForFoodie\eCafe.Core\obj\Debug\netcoreapp2.0\eCafe.Core.csprojResolveAssemblyReference.cache
