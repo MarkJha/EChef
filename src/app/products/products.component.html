@@ -1,0 +1,26 @@
+<pm-spinner [isLoadingOverlay]="true" name="mySpinner" [show]="loading">
+</pm-spinner>
+
+<div class="row">
+  <div class="col-lg-3">
+    <app-product-filter
+    [category]="category"
+    (categoryClicked)='selectedProducts($event)'></app-product-filter>
+  </div>
+
+  <div class="col-lg-9">
+    <div class="row" *ngIf="productList">
+      <div class="col-lg-4 col-md-6 mb-4" *ngFor="let product of productList">
+        <app-product-card [product]="product" [shopping-cart]="cart"></app-product-card>        
+      </div>
+    </div>
+
+    <div class="row" *ngIf="noRecordFound">
+      <div class="alert alert-danger" role="alert">
+        Sorry, no records for selected <b>{{category}} </b>.
+      </div>
+    </div>
+
+  </div>
+
+</div>

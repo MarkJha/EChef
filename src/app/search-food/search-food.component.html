@@ -1,0 +1,22 @@
+<div class="card my-8">
+  <h5 class="card-header">Menu Search</h5>
+  <div class="card-body">
+    <div class="input-group">
+      <input type="text" class="form-control" #searchText [ngModel] name="searchText" placeholder="Search for...">
+      <span class="input-group-btn">
+        <button class="btn btn-primary"        
+         (click)='search(searchText.value)'
+         type="button"><i class="fa fa-search" aria-hidden="true"></i> Go!</button>
+      </span>
+    </div>
+    <br>
+    <div class="row" *ngIf="products">
+      <div class="col-lg-3 col-md-6 mb-4" *ngFor="let product of products">
+          <app-product-card [product]="product" [show-actions]="true"></app-product-card> 
+      </div>
+    </div>
+    <div class="row" *ngIf="products===0">
+      OOps no records found
+    </div>
+  </div>
+</div>

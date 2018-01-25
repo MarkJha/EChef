@@ -1,0 +1,123 @@
+<pm-spinner
+[isLoadingOverlay]="true"
+name="mySpinner"
+[show]="loading">
+</pm-spinner> 
+
+<section *ngIf='!loading && !isError'>
+  <div class="card">
+    <h3 class="card-header"><i class="fa fa-list" aria-hidden="true"></i> {{pageTitle}}</h3>
+    <div class="card-block container">      
+      <br>
+      <p>
+        <button type="button" routerLink="/admin/products/new" class="btn btn-primary btn-space">
+          <i class="fa fa-plus-square" aria-hidden="true"></i> Add Cusine</button>
+        <button type="button" class="btn btn-dark btn-space">
+            <i class="fa fa-plus-square" aria-hidden="true"></i> Add Sub Cuisine</button>
+        <button type="button" class="btn btn-success btn-space">
+            <i class="fa fa-plus-square" aria-hidden="true"></i> Add Cusine Detail</button>
+      </p>
+
+      
+        <pm-search-panel name="allSearch"
+        style="margin-top: 10px"        
+        [placeHolder]="'Search all cusines here...'"
+        (searchOnKeyup)='filter($event)'>
+       </pm-search-panel>
+
+       <div *ngIf='itemCount<=0' class='alert alert-info'>
+          No records found! Add Cusine by clicking <b>Add Cusine</b>
+        </div>
+ 
+       <data-table *ngIf="itemCount>0"
+        [items]="items"
+        [itemCount]="itemCount"
+        [rowTooltip]="rowTooltip"
+        (reload)="reloadItems($event)">
+
+        <data-table-column
+        [property]="'imagePath'"
+        [header]="'Image'"
+        [width]="180">
+        <ng-template #dataTableCell let-item="item">
+          <img class="img-thumbnail"
+          [style.width.px]='imageWidth'
+          [style.margin.px]='imageMargin'
+          title="{{ item.name }}"
+          src="{{item.imagePath}}" />        
+        </ng-template>
+       </data-table-column>
+ 
+         <data-table-column
+          [property]="'name'"
+          [header]="'Menu Name'"
+          [sortable]="true"
+          [width]="150"
+          [resizable]="true">
+          <ng-template #dataTableCell let-item="item">
+            <a [routerLink]="['/admin/products/',item.id,'V']">
+             <b>{{item.name}}</b>
+            </a>           
+          </ng-template>
+         </data-table-column>
+ 
+         <data-table-column
+          [property]="'description'"
+          [header]="'Description'"
+          [sortable]="true"
+          [width]="150"
+          [resizable]="true">
+          <ng-template #dataTableCell let-item="item">
+            {{item.description | summeryText:45}}
+          </ng-template>
+         </data-table-column>
+ 
+         <data-table-column
+          [property]="'isActive'"
+          [header]="'Active'"
+          [width]="50"
+          [resizable]="true">
+           <ng-template #dataTableHeader let-item="item">
+             <span style="color: rgb(232, 0, 0)">Active</span>
+           </ng-template>
+           <ng-template #dataTableCell let-item="item">
+             <i class="fa fa-check" aria-hidden="true" *ngIf="item.isActive" style="color: green"></i>
+             <i class="fa fa-times" aria-hidden="true" *ngIf="!item.isActive" style="color: red"></i>
+           </ng-template>
+         </data-table-column>
+ 
+         <data-table-column
+          [property]="'guid'"
+          [header]="'Guid'"
+          [sortable]="true"
+          [resizable]="true"
+          [visible]="false">
+         </data-table-column>
+ 
+         <data-table-column
+         [property]="'id'"
+         [header]="'Action'"
+         [width]="60"
+         [resizable]="true">         
+          <ng-template #dataTableCell let-item="item">
+            <a [routerLink]="['/admin/products/',item.id]">
+             <i class="fa fa-pencil-square-o fa-lg" title="Update {{item.name}}" aria-hidden="true"></i>
+           </a>
+            <a [routerLink]="['/admin/products/',item.id,'D']">
+             <i class="fa fa-trash-o fa-lg" title="Delete {{item.name}}" aria-hidden="true" style="color: red"></i>
+           </a>
+          </ng-template>
+        </data-table-column> 
+       </data-table>
+       <div style="margin-bottom: 20px"></div>
+      </div>
+
+        <div *ngIf='isError' class='alert alert-danger'>
+          something error occured
+        </div>
+
+       
+      
+  </div>
+</section>
+<div style="margin-bottom: 30px"></div>

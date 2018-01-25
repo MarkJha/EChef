@@ -1,0 +1,135 @@
+<div class="row">
+  <div class="col-lg-12">
+    <div class="card rounded-0">
+      <div class="card-header">
+        <h3 class="mb-0">{{headerTitle}}</h3>
+      </div>
+      <div class="card-body">
+        <form novalidate autocomplete="off" [formGroup]="productDetailForm">
+          <fieldset>
+            <div class="row">
+              <div class="col-lg-6">
+                <h4>Basic Menu Details</h4>
+                <div class="form-group">
+                  <label for="cusineList">Select Cusine</label>
+                  <span *ngIf="cusineName" class="bg-primary text-white" style="padding: 5px">{{cusineName}}</span>
+                  <select class="form-control" id="cusineList" [(ngModel)]="cusineSelected" formControlName=cusineId>
+                    <option *ngFor="let cusine of cusineList" [ngValue]="cusine">
+                      {{cusine.value}}</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="cusineList">Select Sub Cusine Type</label>
+                  <span *ngIf="subCusineName" class="bg-primary text-white" style="padding: 5px">{{subCusineName}}</span>
+                  <select class="form-control" id="subCusineList" [(ngModel)]="subCusineSelected" formControlName=subCusineId>
+                    <option *ngFor="let subCusine of subCusineList" [ngValue]="subCusine">
+                      {{subCusine.value}}</option>
+                  </select>
+                </div>
+                <div class="form-group" [ngClass]="{'has-error': displayMessage.productName }">
+                  <label for="menuName">Menu Name</label>
+                  <input class="form-control" id="menuName" type="text" placeholder="Enter Menu Name (reuired)" formControlName=productName>
+                  <span class="help-block" *ngIf="displayMessage.productName">
+                    {{displayMessage.productName}}
+                  </span>
+                </div>
+                <div class="form-group" [ngClass]="{'has-error': displayMessage.productDescription }">
+                  <label for="menuDescription">Menu Description</label>
+                  <input class="form-control" id="menuDescription" type="text" placeholder="Enter Menu Description" required formControlName=productDescription
+                  />
+                  <span class="help-block" *ngIf="displayMessage.productDescription">
+                    {{displayMessage.productDescription}}
+                  </span>
+                </div>
+                <div class="form-group">
+                  <label for="ingredients">Menu Ingredients</label>
+                  <textarea class="form-control" id="ingredients" rows="2" placeholder="Enter Menu Ingredients" formControlName=ingredients>
+                      </textarea>
+                </div>
+                <div class="form-group">
+                  <label for="receipe">Menu Recipe</label>
+                  <textarea class="form-control" id="receipe" rows="3" placeholder="Enter Menu Recipe" formControlName=receipe>                     
+                    </textarea>
+                </div>
+
+                <div formArrayName="images">
+                  <div class="">
+                    <button class="btn btn-default" type="button" (click)="addImage()">Add Menu Image
+                    </button>
+                  </div>
+                  <div class="form-group" *ngFor="let image of images.controls; let i=index">
+                    <label for="imageUrl" [attr.for]="i">Image Url</label>
+                    <i class="fa fa-times pull-right" style="color: red" aria-hidden="true" (click)="removeImage(i)"></i>
+                    <input #imageUrl class="form-control" [id]="i" placeholder="Enter Sub-Cusine image url" [formControlName]="i">
+                  </div>
+                </div>
+
+                <div class="form-check">
+                  <label for="isActive" class="form-check-label">
+                    <input id="isActive" type="checkbox" class="form-check-input" formControlName=isActive> Active
+                  </label>
+                </div>
+                <div class="form-check">
+                  <label for="isVeg" class="form-check-label">
+                    <input id="isVeg" type="checkbox" class="form-check-input" formControlName=isVeg> Veg
+                  </label>
+                </div>
+                <div class="form-check">
+                  <label for="isSpecial" class="form-check-label">
+                    <input id="isSpecial" type="checkbox" class="form-check-input" formControlName=isSpecial> Special
+                  </label>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <h4>Menu Image</h4>
+                <div class="card">
+                  <img class="card-img-top" src="{{productDetailForm.value.images}}" alt="">
+                </div>
+                <h4>Menu Rate Details</h4>
+                <div formGroupName="rateGroup">
+                  <div class="form-group" [ngClass]="{'has-error': displayMessage.rate }">
+                    <label for="rate">Menu Rate</label>
+                    <input class="form-control" id="rate" type="text" placeholder="Rate" formControlName=rate>
+                    <span class="help-block" *ngIf="displayMessage.rate">
+                      {{displayMessage.rate}}
+                    </span>
+                  </div>
+                  <div class="form-group">
+                    <label for="discount">Discount</label>
+                    <input class="form-control" id="discount" placeholder="Dicount" formControlName=discount>
+                  </div>
+                  <div class="form-group">
+                    <label for="quantity">Quantity</label>
+                    <input class="form-control" id="quantity" placeholder="Quantity" formControlName=quantity>
+                  </div>
+                  <div class="form-group" [ngClass]="{'has-error': displayMessage.servePeoples }">
+                    <label for="serve">Serve To Peoples</label>
+                    <input class="form-control" id="serve" placeholder="Serve To Peoples" formControlName=servePeoples>
+                    <span class="help-block" *ngIf="displayMessage.servePeoples">
+                      {{displayMessage.servePeoples}}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+
+      </div>
+      <div class="card-footer">
+        <button [disabled]="!productDetailForm.valid" type="button" (click)="save()" class="btn btn-success float-right">
+          <i class="fa fa-floppy-o fa-lg" aria-hidden="true"></i> Save</button>
+        <button *ngIf="id" type="button" (click)="delete()" class="btn btn-danger float-right btn-primary-spacing">
+          <i class="fa fa-trash-o fa-lg" aria-hidden="true"></i> Delete</button>
+        <button type="button" routerLink="/admin/productDetails" class="btn btn-primary float-left">
+          <i class="fa fa-home fa-fw fa-lg" aria-hidden="true"></i> Back</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div style="margin-bottom: 30px"></div>
+<!-- <br>Dirty: {{productDetailForm.dirty}}
+<br>Touched: {{productDetailForm.touched}}
+<br>Valid: {{productDetailForm.valid}}
+<br>Value: {{productDetailForm.value | json}}
+<br>Value: {{productDetailForm.value.images | json}} -->

@@ -1,0 +1,79 @@
+<header>
+  <ngb-carousel>
+    <ng-template ngbSlide *ngFor="let slider of sliders">
+        <img class="img-fluid mx-auto d-block" [src]="slider.imagePath" alt="Random first slide" width="100%">
+        <div class="carousel-caption">
+            <h3>{{slider.label}}</h3>
+            <p>{{slider.text}}</p>
+        </div>
+    </ng-template>
+</ngb-carousel>
+</header>
+
+<!-- Page Content -->
+<section class="py-5">
+  <div class="container">
+    <h1>Half Slider by Start Bootstrap</h1>
+    <p>The background images for the slider are set directly in the HTML using inline CSS. The rest of the styles for this template
+      are contained within the
+      <code>half-slider.css</code>file.</p>
+  </div>
+</section>
+
+<!-- Page Features -->
+<div class="row text-center">
+
+  <div class="col-lg-3 col-md-6 mb-4">
+    <div class="card">
+      <img class="card-img-top" src="http://placehold.it/500x325" alt="">
+      <div class="card-body">
+        <h4 class="card-title">Card title</h4>
+        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+      </div>
+      <div class="card-footer">
+        <a href="#" class="btn btn-primary">Find Out More!</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-3 col-md-6 mb-4">
+    <div class="card">
+      <img class="card-img-top" src="http://placehold.it/500x325" alt="">
+      <div class="card-body">
+        <h4 class="card-title">Card title</h4>
+        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+      </div>
+      <div class="card-footer">
+        <a href="#" class="btn btn-primary">Find Out More!</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-3 col-md-6 mb-4">
+    <div class="card">
+      <img class="card-img-top" src="http://placehold.it/500x325" alt="">
+      <div class="card-body">
+        <h4 class="card-title">Card title</h4>
+        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+      </div>
+      <div class="card-footer">
+        <a href="#" class="btn btn-primary">Find Out More!</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-3 col-md-6 mb-4">
+    <div class="card">
+      <img class="card-img-top" src="http://placehold.it/500x325" alt="">
+      <div class="card-body">
+        <h4 class="card-title">Card title</h4>
+        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+      </div>
+      <div class="card-footer">
+        <a href="#" class="btn btn-primary">Find Out More!</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- /.row -->

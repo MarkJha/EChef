@@ -1,0 +1,38 @@
+<!-- <div *ngIf="product.name" class="card">
+    <a>
+      <img class="card-img-top"
+       src="{{product.imagePath || './assets/images/foodie.jpg'}}" alt="{{product.name}}">
+    </a>
+    <div class="card-body">
+      <h4 class="card-title">
+        <a>{{product.name}}</a>
+      </h4>
+      <h5>Rs.{{product.rate}}</h5>
+      <p class="card-text">{{product.description |summeryText:45}}</p>
+    </div>
+    <div class="card-footer" *ngIf="showAction">
+      <a class="btn btn-primary btn-block " style="color: white"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to Cart</a>     
+    </div>
+  </div> -->
+
+  <div *ngIf="product.name" class="card">
+    <img class="card-img-top" src="{{product.imagePath || './assets/images/foodie.jpg'}}" alt="{{ product.name }}">
+    <div class="card-body">
+      <h4 class="card-title">{{ product.name }}</h4>
+      <p class="card-text">{{ product.rate | currency:'USD':true }}</p>
+    </div>
+    <div class="card-footer" *ngIf="showAction">
+      <a class="btn btn-primary btn-block" (click)="addItem(product)" style="color: white"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to Cart</a>     
+    </div>
+    <!-- <div *ngIf="showAction && shoppingCart" class="card-footer">
+      <button 
+        *ngIf="shoppingCart.getQuantity(product) === 0; else updateQuantity"
+        (click)="addToCart()"
+        class="btn btn-secondary btn-block">Add to Cart</button>
+      <ng-template #updateQuantity>
+        <product-quantity [product]="product" [shopping-cart]="shoppingCart">
+        </product-quantity>
+      </ng-template>
+    </div> -->
+  </div>    
+  

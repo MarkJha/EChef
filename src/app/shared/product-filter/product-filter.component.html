@@ -1,0 +1,15 @@
+<div class="sticky-top"> 
+    <div class="list-group">
+      <a class="list-group-item list-group-item-action"
+       [class.active]="!category"><b>All Categories</b></a>
+      <a *ngFor="let subProduct of subProductList"
+       routerLink="/"
+       [queryParams]="{ category: subProduct.name, id:subProduct.id }"
+       class="list-group-item list-group-item-action"
+       [class.active]="category === subProduct.name"
+       (click)="onClick(subProduct.id)">
+       {{subProduct.name}}
+        <span class="badge badge-primary badge-pill">{{subProduct.count}}</span>
+      </a>
+    </div> 
+</div>

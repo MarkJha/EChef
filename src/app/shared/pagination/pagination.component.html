@@ -1,0 +1,63 @@
+<section>
+  <div class="card">
+    <!-- Default panel contents -->
+    <div class="card-header">Product List</div>
+    <div class="card-block container">
+      <div class="card-body">
+        <div class="input-group">
+          <input type="text" id="inputName" [(ngModel)]="inputName" class="form-control" placeholder="Search for...">
+          <span class="input-group-btn">
+            <button class="btn btn-primary" (click)="FilterByName()" type="button">Go!</button>
+          </span>
+        </div>
+      </div>
+      <table class="table table-striped">
+        <thead class="thead-dark">
+          <th scope="col">Id</th>
+          <th style="cursor: pointer" scope="col" (click)="sort('name')">Name
+            <i *ngIf="key =='name'" [ngClass]="iconClass" aria-hidden="true"></i>
+          </th>
+          <th scope="col">Description</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of items">
+            <td>{{item.id}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.description}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups" role="toolbar" style="margin: 0;">
+        <div class="btn-group mr-2" role="group" aria-label="Second group">
+          <label class="btn btn-primary">Page {{currentIndex}}/{{pageNumber}}</label>
+        </div>
+
+        <div class="btn-group float-right">
+          <nav aria-label="Page navigation example">
+            <ul class="pagination">
+              <li class="page-item" [ngClass]="{'disabled': (currentIndex == 1 || pageNumber == 0)}">
+                <a (click)="prevPage()" class="page-link" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                  <span class="sr-only">Previous</span>
+                </a>
+              </li>
+
+              <li class="page-item" *ngFor="let page of pagesIndex" [ngClass]="{'active': (currentIndex == page)}">
+                <a class="page-link" (click)="setPage(page)">{{page}}</a>
+              </li>
+
+              <li class="page-item" [ngClass]="{'disabled': (currentIndex == pageNumber || pageNumber == 0)}">
+                <a class="page-link" (click)="nextPage()" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </li>
+
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

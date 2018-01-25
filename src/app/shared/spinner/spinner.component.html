@@ -1,0 +1,15 @@
+<!-- <div class="loading" *ngIf="show" >
+  <i class="fa fa-spinner fa-spin" style="font-size:40px;color:rgb(0, 102, 255)"></i>  
+</div> -->
+
+
+<!-- <div *ngIf="show">
+  <img *ngIf="loadingImage" [src]="loadingImage" />
+  <ng-content></ng-content>
+</div> -->
+
+
+<div *ngIf="show" [class.loading]="isLoadingOverlay">
+  <i *ngIf="loadingImage" [class]="loadingImage" style="font-size:40px;color:rgb(0, 102, 255)"></i>
+  <ng-content></ng-content>
+</div>
